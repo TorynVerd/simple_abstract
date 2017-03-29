@@ -36,15 +36,16 @@ namespace parse
 		 return list;
 		}
 		
-		public List<string> GetLeninValue( string searchPath,string el)
+		public string GetLeninValue( string searchPath,string el)
 		{
-			List<string> list = new List<string>();
-			 
+			//List<string> list = new List<string>();
+			string list = "";
 		 	HtmlDocument document2 = web1.Load("http://cyberleninka.ru"+ el);
 			HtmlNodeCollection value1 = document2.DocumentNode.SelectNodes(searchPath);
              foreach (var ili in value1) 
               {
-        	   list.Add(ili.InnerText);
+        	   list = ili.InnerText;
+        	   
         	  }
 		 return list;
 		}
